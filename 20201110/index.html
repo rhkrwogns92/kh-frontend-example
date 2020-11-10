@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>2020월11월10일</title>
+        <style>
+            :root{
+                /* 스타일에서 사용할 변수들 선언 */
+                --color-login-form-background: #f6faf7;
+                --color-login-btn: #2c974b;
+                --color-login-btn-hover: #2ebc4f;
+            }
+
+            .login-form {
+                background-color: var(--color-login-form-background);
+                width: 310px;
+                height: 228px;
+                margin: 16px 0 0;
+                border: 1px solid #eaecef; /*사각형 바깥 선*/
+                border-radius: 5px;/*사각형 테두리 둥근정도*/
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            label {
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .basic-input {
+                box-sizing: border-box;
+                margin-top: 3px;
+                width: 100%;
+                border: 1px solid #acb7c7;
+                height: 26px;
+            }
+            
+            .basic-input-submit {
+                margin-top: 20px;
+                background-color: var(--color-login-btn);
+                text-decoration: none;
+                width: 100%;
+                height: 32px;
+                color: #ffffff;
+                border: 0;
+                border-radius: 3px;
+            }
+
+            .basic-input-submit:hover {
+                background-color: var(--color-login-btn-hover);
+                cursor: pointer;     
+            }
+        </style>
+    </head>
+
+    <body>
+        <form method="POST" action="/login" name="user-login" class="login-form">
+        <label>Username or email address</label>
+        <input name="username" type="text" class="basic-input"/>
+        <label>Password</label>
+        <input name="password" type="password" class="basic-input"/>
+        <input type="submit" value="Sign in" class="basic-input-submit"/>
+        </form>
+    </body>
+</html>

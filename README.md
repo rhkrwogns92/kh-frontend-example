@@ -1,3 +1,6 @@
+----------------------------------------------------------------------
+2020.11.09(월) 수업
+
 # 1. HTML
 
  - HTML: HyperText Markup Language
@@ -179,3 +182,34 @@ height - 높이
 - href : 주소
 - targer : 링크가 표시될 방법
 - download : 링크의 리소르를 다운로드
+
+
+targer 속성
+ - _blank
+ - self : 기본 값                                                                                        
+
+
+
+# 용어 정리
+
+퀀텀 타임(quantum time) - 시간 조각
+시분할(time sharing)
+여러 프로그램을 돌아가면서 실행 -> 스케쥴링
+
+물리적으로 동시에 돌아감 -> 병렬성(parallelism)
+실제로 동시에 돌아가는것 처럼 보임 -> 동시성(concurrency)
+
+# 스레드 사용의 문제점
+
+- 동기화(synchronization) 문제
+- 임계영역(critical section) 문제
+
+# 스레드의 상태
+
+- NEW : 새로 생성된 경우
+- RUNNABLE : 실행 대기
+- 실행
+- 일시정지
+- 종료
+
+
