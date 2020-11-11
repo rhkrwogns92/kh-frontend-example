@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>20201111</title>
+        <style>
+            div{
+                width: 100px;
+                height: 50px;
+                background-color: beige;
+                padding: 20px;
+                overflow: hidden; /*자신의 박스 영역을 벗어나면 숨기겠다는 뜻*/
+                white-space: nowrap; /*줄바꿈 없이 한줄로 쭉 표시하게하는것*/
+                text-overflow: ellipsis; /*박스 넘어가면 ...(말줄임표)로 변경*/
+            }
+            li::before {
+                content: "(이모지 가져올 수 있다) "
+            }
+            li{
+                list-style: none; /*숫자 없애기*/
+            }
+
+            li{
+                list-style-type: lower-alpha /*숫자를 알파벳으로 바꾸기*/
+             }
+        </style>
+    </head>
+    <body>
+        <div>
+            ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+        </div>
+
+        <ol>
+            <li>ㅇㅇㅇㅇ1</li>
+            <li>ㅇㅇㅇㅇ2</li>
+            <li>ㅇㅇㅇㅇ3</li>            
+        </ol>
+
+    </body>
+</html>
