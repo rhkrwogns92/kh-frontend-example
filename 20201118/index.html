@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+    <title>로그인 페이지</title>
+    <style>
+
+        /* 전역 설정 시작*/
+        html,body {
+            margin: 0;
+            background-color: #f1f1f1;            
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0;
+        }
+        /* 전역 설정 끝*/
+
+        .form-container {
+            max-width: 400px;
+            height: 140vh;
+            background-color: white;
+            margin: 0 auto;
+            padding: 0 45px 100px 45px;
+        }
+
+        .sign-up-header { 
+            text-align: center;
+            padding: 60px 0 26px 0;
+        }
+
+        .sign-up-header > h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .form-box-field {
+            margin-bottom: 1rem;   
+        }
+
+        .form-box-field > .form-box-field-input {
+            width: 100%;
+            height: 50px;
+            outline: none;
+            border: 1px solid #e5e5e5;
+            font-size: 0.8rem;
+            text-indent: 0.5rem;
+        }
+
+        .form-box-field > .form-box-field-input::placeholder {
+            color: #cccccc;
+        }
+
+        .form-box-field > .form-box-field-input:focus { /* 클릭 시 천천히 틀 색깔 변하게 하기*/
+            border-color: #aaaaaa;
+            /*transition: [어떤속성] [전환시간s] []  / 천천히 색깔 변하는 효과 */
+            transition: border 0.3s ease-in-out;
+        }
+        
+        .field-required { /*빨간점 만들기*/
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            background-color: red;
+            border-radius: 100%;
+            text-indent: -999999999px;
+        }
+
+        .form-box-field > .warn-info { /*경고창 만들기*/
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: red;
+            display: none;
+        }
+
+        .form-box-field.warn > .warn-info {
+            display: block;
+        }
+
+        .form-box-field > label {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .terms-box {
+            padding-top: 1.5rem;
+            font-size: 14px;
+        }
+
+        .terms-box input {
+          display: block;
+          width: 0;
+          height: 0;
+          overflow: hidden;
+          visibility: hidden;
+          position: absolute;
+      }
+
+      .terms-box label {
+          
+          padding-left: 1.5rem;
+          position: relative;
+          cursor: pointer; /*마우스올리면 클릭형태로 마우스표시바뀜*/
+          user-select: none; /*더블클릭해도 파란색으로 선택안되게*/
+      }
+
+      .terms-box label::before {
+          content: '';
+          display: block;
+          position: absolute; /*절대좌표로 절대 위치 안밀림(고정)*/
+          top: 0;
+          left: 0;
+          width: 18px;
+          height: 18px;
+          border-radius: 100%;
+          border: 1px solid #cccccc;
+          background-color: #f1f1f1;
+      }
+
+      .terms-box input:checked ~ label::before { /*terms-box안에 있는 후손인 input이 체크되면은 형제인 label의 before를 가상선택하겠다*/
+        background-color: #0078ff;
+        border-color: #0078ff;
+      }
+      
+      .terms-box label::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 6px;
+          height: 3px;
+          border-left: 1px solid white;
+          border-bottom: 1px solid white;
+          top: 7px;
+          left: 7px;
+          transform: rotate(-45deg);
+          visibility: hidden;
+      }
+
+      .terms-box input:checked ~ label::after {
+        visibility: visible;
+      } 
+       
+
+    </style>
+</head>
+<body>    
+    <!--전체 큰틀-->
+    <div class="form-container"> 
+
+        <!--헤더 틀-->
+        <header class="sign-up-header"> 
+            
+            <!--첫번째 박스-->
+            <div class="logo-box"> 
+                <img src="https://image.msscdn.net/ui/musinsa/resources/common/image/logo_mwusinsa.svg"> <!--이미지삽입-->
+            </div>
+            <h2>회원가입</h2>
+        </header>
+
+        <!--정보입력 틀-->
+        <main> 
+            <form class="form-box" name="sign-up-form">
+
+                <!--1. 아이디입력 틀-->
+                <div class="form-box-field warn"> 
+                    <label> 
+                        아이디
+                        <span class="field-required"> <!--빨간점 만들기위한 것-->
+                            이 글을 읽을 수 있다면 당신은 개발자입니다.
+                        </span>
+                    </label>
+                    <input  
+                    class="form-box-field-input" 
+                    type="text"
+                    placeholder="아이디 입력(5~11자)"> 
+                    <p class="warn-info">아이디는 필수정보입니다.</p> 
+                </div>
+
+                <!--1. 비밀번호입력 틀-->
+                <div class="form-box-field warn"> 
+                    <label> 
+                        비밀번호
+                        <span class="field-required"> <!--빨간점 만들기위한 것-->
+                            이 글을 읽을 수 있다면 당신은 개발자입니다.
+                        </span>
+                    </label>
+                    <input  
+                    class="form-box-field-input" 
+                    type="password"
+                    placeholder="비밀번호(숫자, 영문, 특수문자 조합 최소 8자 이상)"> 
+                    <p class="warn-info">아이디는 필수정보입니다.</p> 
+                </div>
+
+                <!--1. 이메일입력 틀-->
+                <div class="form-box-field warn">
+                    <label> 
+                        이메일
+                        <span class="field-required"> <!--빨간점 만들기위한 것-->
+                            이 글을 읽을 수 있다면 당신은 개발자입니다.
+                        </span>
+                    </label>
+                    <input  
+                    class="form-box-field-input" 
+                    type="email"
+                    placeholder="이메일 입력"> 
+                    <p class="warn-info">아이디는 필수정보입니다.</p> 
+                </div>
+
+                <div class="form-box-field warn"> <!--1. 추천인 입력 틀-->
+                    <label> 
+                        추천인                        
+                    </label>
+                    <input  
+                    class="form-box-field-input" 
+                    type="text"
+                    placeholder="추천인 아이디 입력"> 
+                </div>
+               
+                <!--약관-->
+                <div class="terms-box"> 
+                    <div>
+                        <input id="check1" type="checkbox" class="terms-agreement"/>
+                        <label for="check1">약관 전체 동의</label>
+                    </div>
+                </div>
+           
+                <div class="terms-box"> 
+                    <div>
+                        <input id="check2" type="checkbox" class="terms-agreement"/>
+                        <label for="check2">개인정보 수집 이용동의(필수)</label>
+                    </div>
+                </div>
+          
+                <div class="terms-box"> 
+                    <div>
+                        <input id="check3" type="checkbox" class="terms-agreement"/>
+                        <label for="check3">무신사, 무신사스토어 이용약관(필수)</label>
+                    </div>
+                </div>
+      
+                <div class="terms-box"> 
+                    <div>
+                        <input id="check4" type="checkbox" class="terms-agreement"/>
+                        <label for="check4">마케팅 활용 및 광고성 정보 수신 동의(선택)</label>
+                    </div>
+                </div>
+             
+                <div class="terms-box"> 
+                    <div>
+                        <input id="check5" type="checkbox" class="terms-agreement"/>
+                        <label for="check5">만 14세 미만 가입 제한(필수)</label>
+                    </div>
+                </div>
+            
+            </form>
+        </main>
+    </div>
+    <script>
+        const all = document.getElementById('check1')
+        all.addEventListener('click', () => {
+            const checks = document.querySelectorAll('.terms-agreement')
+            for (item of checks) {            
+                item.checked = true               
+            }          
+        })
+    </script>
+</body>
+</html>
